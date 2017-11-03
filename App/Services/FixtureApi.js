@@ -6,13 +6,6 @@ export default {
       data: require('../Fixtures/root.json')
     }
   },
-  getRate: () => {
-    return {
-      ok: true,
-      data: require('../Fixtures/rateLimit.json')
-    }
-  },
-
   getListRate: () => {
     return {
       ok: true,
@@ -25,13 +18,16 @@ export default {
       data: require('../Fixtures/listCategories.json')
     }
   },
-  getUser: (username) => {
-    // This fixture only supports gantman or else returns skellock
-    const gantmanData = require('../Fixtures/gantman.json')
-    const skellockData = require('../Fixtures/skellock.json')
+  getUserProfile: () => {
     return {
       ok: true,
-      data: username.toLowerCase() === 'gantman' ? gantmanData : skellockData
+      data: require('../Fixtures/userProfile.json')
+    }
+  },
+  getCountries: () => {
+    return {
+      ok: true,
+      data: require('../Fixtures/listCountries.json')
     }
   }
 }

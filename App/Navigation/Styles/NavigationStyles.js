@@ -3,8 +3,12 @@ import { Colors, Metrics } from '../../Themes/'
 
 export default StyleSheet.create({
   header: {
-    backgroundColor: Colors.fire,
+    backgroundColor: Colors.navbar,
     paddingLeft: Metrics.baseMargin,
     paddingRight: Metrics.baseMargin
+  },
+  headerTitle: {
+    color: Colors.snow,
+    alignSelf: 'center'
   }
 })

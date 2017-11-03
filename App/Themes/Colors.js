@@ -1,5 +1,5 @@
 const colors = {
-  background: '#1F0808',
+  background: '#EF6C00',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
   transparent: 'rgba(0,0,0,0)',
@@ -16,12 +16,14 @@ const colors = {
   bloodOrange: '#fb5f26',
   snow: 'white',
   ember: 'rgba(164, 0, 48, 0.5)',
-  fire: '#e73536',
+  fire: '#FB8C00',
   drawer: 'rgba(30, 30, 29, 0.95)',
   eggplant: '#251a34',
   border: '#483F53',
   banner: '#5F3E63',
-  text: '#E0D7E5'
+  text: '#E0D7E5',
+  navbar: '#E65100',
+  tint: '#E65100'
 }
 
 export default colors

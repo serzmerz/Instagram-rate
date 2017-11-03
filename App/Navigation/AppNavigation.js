@@ -1,8 +1,8 @@
 import { StackNavigator } from 'react-navigation'
+import ProfileScreen from '../Containers/ProfileScreen'
 import ListCategories from '../Containers/ListCategories'
 import LoginScreen from '../Containers/LoginScreen'
-import ListItems from '../Containers/ListItems'
-import LaunchScreen from '../Containers/LaunchScreen'
+import ListMembers from '../Containers/ListMembers'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import styles from './Styles/NavigationStyles'
@@ -18,19 +18,26 @@ const PrimaryNav = StackNavigator({
       headerLeft: <Icon name='md-person' size={30} color='#fff' />
     }
   },
-  ListItems: {
-    screen: ListItems,
+  ListMembers: {
+    screen: ListMembers,
     navigationOptions: {
       headerRight: <Icon name='md-settings' size={30} color='#fff' />,
       headerLeft: <Icon name='md-person' size={30} color='#fff' />
     }
   },
-  LaunchScreen: { screen: LaunchScreen }
+  ProfileScreen: {
+    screen: ProfileScreen,
+    navigationOptions: {
+      headerRight: <Icon name='md-settings' size={30} color='#fff' />,
+      headerLeft: <Icon name='md-person' size={30} color='#fff' />
+    }
+  }
 }, {
   // Default config for all screens
-  initialRouteName: 'LoginScreen',
+  initialRouteName: 'ListMembers',
   navigationOptions: {
     title: 'HYPEBOARD',
+    headerTitleStyle: styles.headerTitle,
     headerStyle: styles.header
   }
 })

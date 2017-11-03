@@ -6,33 +6,31 @@ import DebugConfig from '../Config/DebugConfig'
 /* ------------- Types ------------- */
 
 import { StartupTypes } from '../Redux/StartupRedux'
-import { GithubTypes } from '../Redux/GithubRedux'
-import { ListTypes } from '../Redux/ListItemsRedux'
-import { ListCategoriesTypes } from '../Redux/ListCategoriesRedux'
+import { MembersTypes } from '../Redux/MembersRedux'
+import { CategoriesTypes } from '../Redux/CategoriesRedux'
+import { UserProfileTypes } from '../Redux/UserProfileRedux'
 
 /* ------------- Sagas ------------- */
 
 import { startup } from './StartupSagas'
-import { fetchList } from './ListItemsSagas'
-import { getUserAvatar } from './GithubSagas'
-import { getListCategoriesSagas } from './ListCategoriesSagas'
+import { getMembersSagas } from './MembersSagas'
+import { getCategoriesSagas } from './CategoriesSagas'
+import { getUserProfileSagas } from './UserProfileSagas'
+import { CountriesTypes } from '../Redux/CountriesRedux'
+import { getCountriesSagas } from './CountriesSagas'
 
 /* ------------- API ------------- */
 
-// The API we use is only used from Sagas, so we create it here and pass along
-// to the sagas which need it.
 const api = DebugConfig.useFixtures ? FixtureAPI : API.create()
 
 /* ------------- Connect Types To Sagas ------------- */
 
 export default function * root () {
   yield all([
-    // some sagas only receive an action
     takeLatest(StartupTypes.STARTUP, startup),
-    takeLatest(ListTypes.LIST_REQUEST, fetchList, api),
-    takeLatest(ListCategoriesTypes.LIST_CATEGORIES_REQUEST, getListCategoriesSagas, api),
-
-    // some sagas receive extra parameters in addition to an action
-    takeLatest(GithubTypes.USER_REQUEST, getUserAvatar, api)
+    takeLatest(MembersTypes.GET_MEMBERS_REQUEST, getMembersSagas, api),
+    takeLatest(CategoriesTypes.GET_CATEGORIES_REQUEST, getCategoriesSagas, api),
+    takeLatest(UserProfileTypes.GET_USER_PROFILE_REQUEST, getUserProfileSagas, api),
+    takeLatest(CountriesTypes.GET_COUNTRIES_REQUEST, getCountriesSagas, api)
   ])
 }

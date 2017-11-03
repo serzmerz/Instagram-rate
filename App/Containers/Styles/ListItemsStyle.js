@@ -12,9 +12,7 @@ export default StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: Colors.fire,
-    marginVertical: Metrics.smallMargin
+    alignItems: 'center'
   },
   boldLabel: {
     fontWeight: 'bold',
@@ -28,7 +26,8 @@ export default StyleSheet.create({
     color: Colors.snow
   },
   listContent: {
-    marginTop: Metrics.baseMargin
+    marginTop: Metrics.baseMargin,
+    paddingBottom: 20
   },
   userIcon: {
     width: 50,

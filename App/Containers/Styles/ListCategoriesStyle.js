@@ -3,20 +3,14 @@ import { Metrics, Colors } from '../../Themes'
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 200,
-    paddingTop: 200
-  },
-  wrap: {
-    paddingTop: 300,
-    backgroundColor: Colors.fire
+    flex: 1
   },
   listContent: {
     marginTop: Metrics.baseMargin
   },
   row: {
-    padding: 10,
-    backgroundColor: Colors.fire,
+    paddingLeft: 10,
+    paddingRight: 10,
     marginVertical: Metrics.smallMargin
   },
   userIcon: {
