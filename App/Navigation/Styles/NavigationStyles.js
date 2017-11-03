@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native'
-import { Colors } from '../../Themes/'
+import { Colors, Metrics } from '../../Themes/'
 
 export default StyleSheet.create({
   header: {
-    backgroundColor: Colors.backgroundColor
+    backgroundColor: Colors.fire,
+    paddingLeft: Metrics.baseMargin,
+    paddingRight: Metrics.baseMargin
   }
 })
